@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Phieu Do Quoc | Personal Profile</title>
+  <meta name="description" content="Trang profile cá nhân hiện đại với nhiều animation, phù hợp cho developer, tech consultant và portfolio cá nhân." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+          },
+          animation: {
+            float: 'float 6s ease-in-out infinite',
+            floatSlow: 'float 9s ease-in-out infinite',
+            pulseGlow: 'pulseGlow 3s ease-in-out infinite',
+            gradientMove: 'gradientMove 12s ease infinite',
+            spinSlow: 'spin 18s linear infinite',
+            marquee: 'marquee 22s linear infinite',
+            fadeUp: 'fadeUp .9s ease both',
+            blink: 'blink 1s step-end infinite',
+            morph: 'morph 8s ease-in-out infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-18px)' },
+            },
+            pulseGlow: {
+              '0%, 100%': { boxShadow: '0 0 40px rgba(34,211,238,.25)' },
+              '50%': { boxShadow: '0 0 90px rgba(59,130,246,.45)' },
+            },
+            gradientMove: {
+              '0%, 100%': { backgroundPosition: '0% 50%' },
+              '50%': { backgroundPosition: '100% 50%' },
+            },
+            marquee: {
+              '0%': { transform: 'translateX(0)' },
+              '100%': { transform: 'translateX(-50%)' },
+            },
+            fadeUp: {
+              '0%': { opacity: '0', transform: 'translateY(24px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            blink: {
+              '0%, 100%': { opacity: '1' },
+              '50%': { opacity: '0' },
+            },
+            morph: {
+              '0%, 100%': { borderRadius: '42% 58% 70% 30% / 45% 45% 55% 55%' },
+              '33%': { borderRadius: '70% 30% 46% 54% / 30% 70% 30% 70%' },
+              '66%': { borderRadius: '38% 62% 35% 65% / 65% 35% 65% 35%' },
+            }
+          },
+          boxShadow: {
+            neon: '0 0 55px rgba(34,211,238,.35)',
+            card: '0 20px 80px rgba(2,6,23,.55)',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .text-gradient {
+      background: linear-gradient(90deg, #67e8f9, #60a5fa, #c084fc, #67e8f9);
+      background-size: 300% 300%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: gradientMove 8s ease infinite;
+    }
+    .glass {
+      background: rgba(15, 23, 42, 0.62);
+      border: 1px solid rgba(255,255,255,.1);
+      backdrop-filter: blur(18px);
+    }
+    .reveal { opacity: 0; transform: translateY(28px); transition: .8s ease; }
+    .reveal.show { opacity: 1; transform: translateY(0); }
+    .magnetic { transition: transform .25s ease, box-shadow .25s ease; }
+    .magnetic:hover { transform: translateY(-6px) scale(1.015); }
+  </style>
+</head>
+<body class="bg-slate-950 text-white antialiased selection:bg-cyan-300 selection:text-slate-950">
+  <div class="pointer-events-none fixed inset-0 -z-20 overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(34,211,238,.18),transparent_28%),radial-gradient(circle_at_80%_15%,rgba(168,85,247,.16),transparent_26%),radial-gradient(circle_at_50%_90%,rgba(59,130,246,.18),transparent_30%)]"></div>
+    <div class="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,.045)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,.045)_1px,transparent_1px)] bg-[size:72px_72px] [mask-image:radial-gradient(circle_at_center,black,transparent_78%)]"></div>
+    <div class="absolute left-[8%] top-[12%] h-48 w-48 animate-morph bg-cyan-400/20 blur-xl"></div>
+    <div class="absolute right-[10%] top-[22%] h-64 w-64 animate-floatSlow rounded-full bg-fuchsia-500/10 blur-2xl"></div>
+    <div class="absolute bottom-[5%] left-[35%] h-56 w-56 animate-float rounded-full bg-blue-500/10 blur-2xl"></div>
+  </div>
+
+  <header class="fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-slate-950/55 backdrop-blur-xl">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
+      <a href="#home" class="group flex items-center gap-3">
+        <div class="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-300 via-blue-500 to-violet-500 font-black shadow-neon transition group-hover:rotate-6">TL</div>
+        <div>
+          <div class="font-bold leading-none">Phieu Do Quoc</div>
+          <div class="text-xs text-slate-400">Developer Profile</div>
+        </div>
+      </a>
+      <nav class="hidden items-center gap-7 text-sm text-slate-300 md:flex">
+        <a class="hover:text-cyan-200" href="#about">About</a>
+        <a class="hover:text-cyan-200" href="#skills">Skills</a>
+        <a class="hover:text-cyan-200" href="#projects">Projects</a>
+        <a class="hover:text-cyan-200" href="#timeline">Timeline</a>
+        <a class="hover:text-cyan-200" href="#contact">Contact</a>
+      </nav>
+      <a href="#contact" class="rounded-full border border-cyan-300/30 bg-cyan-300/10 px-5 py-2.5 text-sm font-bold text-cyan-100 transition hover:bg-cyan-300 hover:text-slate-950">Hire me</a>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="relative mx-auto grid min-h-screen max-w-7xl items-center gap-14 px-5 pb-20 pt-32 lg:grid-cols-[1.05fr_.95fr] lg:px-8">
+      <div class="animate-fadeUp">
+        <div class="mb-6 inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-300 backdrop-blur">
+          <span class="relative flex h-2.5 w-2.5">
+            <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-300"></span>
+          </span>
+          Available for freelance / consulting projects
+        </div>
+        <h1 class="text-5xl font-black tracking-tight sm:text-6xl lg:text-8xl">
+          Hi, I'm <span class="text-gradient">Tuan</span><br />
+          I build digital products.
+        </h1>
+        <p class="mt-7 max-w-2xl text-lg leading-8 text-slate-300">
+          Software Developer / Tech Consultant tập trung vào web app, backend, DevOps, automation và các giải pháp AI ứng dụng cho doanh nghiệp.
+        </p>
+        <div class="mt-6 flex items-center gap-3 text-xl font-bold text-cyan-100">
+          <span id="typingText">Full-stack Developer</span><span class="animate-blink text-cyan-300">|</span>
+        </div>
+        <div class="mt-10 flex flex-col gap-4 sm:flex-row">
+          <a href="#projects" class="magnetic rounded-full bg-gradient-to-r from-cyan-300 via-blue-500 to-violet-500 px-8 py-4 text-center text-sm font-black shadow-neon">View Projects</a>
+          <a href="mailto:lmtuan@nextquark.com" class="magnetic rounded-full border border-white/15 bg-white/5 px-8 py-4 text-center text-sm font-black text-white hover:bg-white/10">Contact Me</a>
+        </div>
+        <div class="mt-12 grid max-w-2xl grid-cols-3 gap-4">
+          <div class="glass rounded-3xl p-5">
+            <div class="text-3xl font-black text-cyan-200">10+</div>
+            <div class="mt-1 text-sm text-slate-400">Years coding</div>
+          </div>
+          <div class="glass rounded-3xl p-5">
+            <div class="text-3xl font-black text-blue-200">50+</div>
+            <div class="mt-1 text-sm text-slate-400">Projects</div>
+          </div>
+          <div class="glass rounded-3xl p-5">
+            <div class="text-3xl font-black text-violet-200">∞</div>
+            <div class="mt-1 text-sm text-slate-400">Learning</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative mx-auto w-full max-w-lg animate-float">
+        <div class="absolute -inset-6 rounded-[3rem] bg-gradient-to-br from-cyan-300/25 via-blue-500/20 to-violet-500/20 blur-2xl"></div>
+        <div class="glass relative overflow-hidden rounded-[3rem] p-6 shadow-card">
+          <div class="absolute right-8 top-8 h-24 w-24 animate-spinSlow rounded-full border border-dashed border-cyan-300/40"></div>
+          <div class="relative flex aspect-square items-center justify-center overflow-hidden rounded-[2.4rem] bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950">
+            <div class="absolute h-72 w-72 animate-morph bg-gradient-to-br from-cyan-300 via-blue-500 to-violet-500 opacity-80 blur-sm"></div>
+            <div class="relative flex h-52 w-52 items-center justify-center rounded-full border border-white/20 bg-slate-950/70 text-7xl font-black shadow-neon backdrop-blur-xl">TL</div>
+          </div>
+          <div class="mt-6 grid grid-cols-2 gap-4">
+            <div class="rounded-3xl bg-white/[0.06] p-4">
+              <div class="text-xs text-slate-400">Focus</div>
+              <div class="mt-1 font-bold">Product Engineering</div>
+            </div>
+            <div class="rounded-3xl bg-white/[0.06] p-4">
+              <div class="text-xs text-slate-400">Stack</div>
+              <div class="mt-1 font-bold">.NET/PHP/Node/Go/AI</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="overflow-hidden border-y border-white/10 bg-white/[0.03] py-5">
+      <div class="flex w-[200%] animate-marquee gap-8 whitespace-nowrap text-sm font-bold uppercase tracking-[.3em] text-slate-400">
+        <span>Laravel</span><span>Node.js</span><span>React</span><span>TailwindCSS</span><span>Docker</span><span>GitLab CI</span><span>AWS</span><span>AI Automation</span><span>DevOps</span><span>System Design</span>
+        <span>Laravel</span><span>Node.js</span><span>React</span><span>TailwindCSS</span><span>Docker</span><span>GitLab CI</span><span>AWS</span><span>AI Automation</span><span>DevOps</span><span>System Design</span>
+      </div>
+    </section>
+
+    <section id="about" class="mx-auto max-w-7xl px-5 py-24 lg:px-8">
+      <div class="grid gap-10 lg:grid-cols-[.9fr_1.1fr] lg:items-center">
+        <div class="reveal">
+          <p class="text-sm font-black uppercase tracking-[.25em] text-cyan-300">About me</p>
+          <h2 class="mt-4 text-4xl font-black tracking-tight sm:text-5xl">Tôi thích biến yêu cầu mơ hồ thành sản phẩm chạy được.</h2>
+        </div>
+        <div class="reveal glass rounded-[2rem] p-8 text-lg leading-8 text-slate-300">
+          <p>
+            Tôi làm việc ở giao điểm giữa development, infrastructure và business requirement. Điểm mạnh là phân tích yêu cầu, thiết kế flow, triển khai MVP nhanh, setup CI/CD và tối ưu vận hành cho team nhỏ đến vừa.
+          </p>
+          <div class="mt-7 grid gap-4 sm:grid-cols-2">
+            <div class="rounded-2xl bg-white/[0.05] p-5">
+              <div class="font-bold text-white">Mindset</div>
+              <div class="mt-2 text-sm text-slate-400">Clear scope, fast delivery, maintainable code.</div>
+            </div>
+            <div class="rounded-2xl bg-white/[0.05] p-5">
+              <div class="font-bold text-white">Working style</div>
+              <div class="mt-2 text-sm text-slate-400">Structured docs, practical estimates, clean handover.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="border-y border-white/10 bg-white/[0.03] py-24">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="reveal mx-auto max-w-3xl text-center">
+          <p class="text-sm font-black uppercase tracking-[.25em] text-cyan-300">Skills</p>
+          <h2 class="mt-4 text-4xl font-black tracking-tight sm:text-5xl">Tech stack & capabilities</h2>
+        </div>
+        <div class="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          <div class="reveal magnetic glass rounded-3xl p-6">
+            <div class="mb-5 text-4xl">💻</div>
+            <h3 class="text-xl font-black">Frontend</h3>
+            <p class="mt-3 text-sm leading-6 text-slate-400">HTML, TailwindCSS, React, responsive UI, animation, dashboard layout.</p>
+          </div>
+          <div class="reveal magnetic glass rounded-3xl p-6">
+            <div class="mb-5 text-4xl">⚙️</div>
+            <h3 class="text-xl font-black">Backend</h3>
+            <p class="mt-3 text-sm leading-6 text-slate-400">Laravel, Node.js, REST API, auth, queue, database design, admin system.</p>
+          </div>
+          <div class="reveal magnetic glass rounded-3xl p-6">
+            <div class="mb-5 text-4xl">🚀</div>
+            <h3 class="text-xl font-black">DevOps</h3>
+            <p class="mt-3 text-sm leading-6 text-slate-400">Docker, GitLab CI, Jenkins, Linux server, Nginx, deployment workflow.</p>
+          </div>
+          <div class="reveal magnetic glass rounded-3xl p-6">
+            <div class="mb-5 text-4xl">🤖</div>
+            <h3 class="text-xl font-black">AI Workflow</h3>
+            <p class="mt-3 text-sm leading-6 text-slate-400">RAG, prompt design, AI-assisted coding, document automation, internal assistant.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="mx-auto max-w-7xl px-5 py-24 lg:px-8">
+      <div class="reveal flex flex-col justify-between gap-5 md:flex-row md:items-end">
+        <div>
+          <p class="text-sm font-black uppercase tracking-[.25em] text-cyan-300">Projects</p>
+          <h2 class="mt-4 text-4xl font-black tracking-tight sm:text-5xl">Selected work</h2>
+        </div>
+        <p class="max-w-xl text-slate-400">Một số dạng project có thể dùng để trình bày năng lực cá nhân. Bạn có thể thay bằng project thật sau.</p>
+      </div>
+      <div class="mt-12 grid gap-6 lg:grid-cols-3">
+        <article class="reveal magnetic glass group overflow-hidden rounded-[2rem]">
+          <div class="h-48 bg-gradient-to-br from-cyan-300/30 via-blue-500/20 to-slate-900 p-5">
+            <div class="h-full rounded-3xl border border-white/10 bg-slate-950/50 p-4 transition group-hover:scale-[1.03]">
+              <div class="h-3 w-28 rounded-full bg-cyan-300/70"></div>
+              <div class="mt-5 h-20 rounded-2xl bg-white/10"></div>
+              <div class="mt-4 grid grid-cols-2 gap-3"><div class="h-10 rounded-xl bg-white/10"></div><div class="h-10 rounded-xl bg-white/10"></div></div>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-black">Business Dashboard</h3>
+            <p class="mt-3 text-sm leading-6 text-slate-400">Dashboard quản trị dữ liệu, phân quyền, báo cáo và export file cho vận hành nội bộ.</p>
+          </div>
+        </article>
+        <article class="reveal magnetic glass group overflow-hidden rounded-[2rem]">
+          <div class="h-48 bg-gradient-to-br from-violet-400/30 via-fuchsia-500/20 to-slate-900 p-5">
+            <div class="flex h-full items-center justify-center rounded-3xl border border-white/10 bg-slate-950/50 transition group-hover:scale-[1.03]">
+              <div class="h-28 w-28 animate-spinSlow rounded-full border-4 border-dashed border-violet-300/70"></div>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-black">AI Internal Assistant</h3>
+            <p class="mt-3 text-sm leading-6 text-slate-400">Trợ lý nội bộ dùng tài liệu công ty, hỗ trợ tìm kiếm, tóm tắt và hỏi đáp nghiệp vụ.</p>
+          </div>
+        </article>
+        <article class="reveal magnetic glass group overflow-hidden rounded-[2rem]">
+          <div class="h-48 bg-gradient-to-br from-emerald-300/30 via-cyan-500/20 to-slate-900 p-5">
+            <div class="h-full rounded-3xl border border-white/10 bg-slate-950/50 p-4 transition group-hover:scale-[1.03]">
+              <div class="flex items-center justify-between"><div class="h-8 w-8 rounded-full bg-emerald-300/70"></div><div class="h-3 w-20 rounded-full bg-white/20"></div></div>
+              <div class="mt-8 space-y-3"><div class="h-4 rounded-full bg-white/10"></div><div class="h-4 w-2/3 rounded-full bg-white/10"></div><div class="h-4 w-4/5 rounded-full bg-white/10"></div></div>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-black">CI/CD Pipeline</h3>
+            <p class="mt-3 text-sm leading-6 text-slate-400">Thiết lập build, test, deploy tự động cho web/mobile app, kèm notification và rollback flow.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="timeline" class="border-y border-white/10 bg-white/[0.03] py-24">
+      <div class="mx-auto max-w-4xl px-5 lg:px-8">
+        <div class="reveal text-center">
+          <p class="text-sm font-black uppercase tracking-[.25em] text-cyan-300">Timeline</p>
+          <h2 class="mt-4 text-4xl font-black tracking-tight sm:text-5xl">Experience journey</h2>
+        </div>
+        <div class="mt-14 space-y-6">
+          <div class="reveal glass relative rounded-3xl p-6 before:absolute before:-left-3 before:top-8 before:h-6 before:w-6 before:rounded-full before:bg-cyan-300 before:shadow-neon">
+            <div class="text-sm font-bold text-cyan-200">Now</div>
+            <h3 class="mt-1 text-xl font-black">Independent Developer / Tech Consultant</h3>
+            <p class="mt-2 text-slate-400">Tư vấn giải pháp, xây dựng sản phẩm số, setup infra và hỗ trợ team ứng dụng AI vào workflow.</p>
+          </div>
+          <div class="reveal glass relative rounded-3xl p-6 before:absolute before:-left-3 before:top-8 before:h-6 before:w-6 before:rounded-full before:bg-blue-300 before:shadow-neon">
+            <div class="text-sm font-bold text-blue-200">Before</div>
+            <h3 class="mt-1 text-xl font-black">Full-stack / Backend Developer</h3>
+            <p class="mt-2 text-slate-400">Phát triển web app, backend API, hệ thống quản trị, tích hợp dịch vụ bên thứ ba và deployment.</p>
+          </div>
+          <div class="reveal glass relative rounded-3xl p-6 before:absolute before:-left-3 before:top-8 before:h-6 before:w-6 before:rounded-full before:bg-violet-300 before:shadow-neon">
+            <div class="text-sm font-bold text-violet-200">Foundation</div>
+            <h3 class="mt-1 text-xl font-black">Software Engineering Mindset</h3>
+            <p class="mt-2 text-slate-400">Tập trung vào problem solving, đọc hiểu yêu cầu, chia nhỏ scope và cải tiến quy trình phát triển.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="mx-auto max-w-7xl px-5 py-24 lg:px-8">
+      <div class="reveal relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-gradient-to-br from-cyan-300/20 via-blue-500/20 to-violet-500/20 p-8 shadow-neon lg:p-12">
+        <div class="absolute right-[-80px] top-[-80px] h-64 w-64 animate-spinSlow rounded-full border border-dashed border-white/20"></div>
+        <div class="relative grid gap-10 lg:grid-cols-[1fr_.8fr] lg:items-center">
+          <div>
+            <p class="text-sm font-black uppercase tracking-[.25em] text-cyan-100">Let's build something</p>
+            <h2 class="mt-4 text-4xl font-black tracking-tight sm:text-6xl">Có project cần triển khai?</h2>
+            <p class="mt-5 max-w-2xl text-lg leading-8 text-slate-200">Liên hệ để trao đổi về website, web app, automation, DevOps hoặc AI workflow cho doanh nghiệp.</p>
+          </div>
+          <div class="glass rounded-[2rem] p-6">
+            <a class="flex items-center justify-between rounded-2xl bg-white/[0.06] p-4 transition hover:bg-white/[0.1]" href="mailto:lmtuan@nextquark.com">
+              <span class="text-slate-400">Email</span><strong>lmtuan@nextquark.com</strong>
+            </a>
+            <a class="mt-4 flex items-center justify-between rounded-2xl bg-white/[0.06] p-4 transition hover:bg-white/[0.1]" href="tel:+84989183193">
+              <span class="text-slate-400">Phone</span><strong>+84 989 183 193</strong>
+            </a>
+            <a class="mt-6 inline-flex w-full justify-center rounded-full bg-white px-7 py-4 text-sm font-black text-slate-950 transition hover:bg-cyan-100" href="mailto:lmtuan@nextquark.com?subject=Profile%20Contact">Send message</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-white/10 py-8">
+    <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-5 text-sm text-slate-500 md:flex-row lg:px-8">
+      <div>© 2026 Phieu Do Quoc. Built with TailwindCSS.</div>
+      <div class="flex gap-5">
+        <a class="hover:text-white" href="#home">Top</a>
+        <a class="hover:text-white" href="https://nextquark.com">nextquark.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const roles = [
+      'Full-stack Developer',
+      'Backend Engineer',
+      'DevOps Learner',
+      'AI Workflow Builder',
+      'Tech Consultant'
+    ];
+    const el = document.getElementById('typingText');
+    let roleIndex = 0;
+    let charIndex = 0;
+    let deleting = false;
+
+    function typeLoop() {
+      const current = roles[roleIndex];
+      if (!deleting) {
+        el.textContent = current.slice(0, charIndex + 1);
+        charIndex++;
+        if (charIndex === current.length) {
+          deleting = true;
+          setTimeout(typeLoop, 1200);
+          return;
+        }
+      } else {
+        el.textContent = current.slice(0, charIndex - 1);
+        charIndex--;
+        if (charIndex === 0) {
+          deleting = false;
+          roleIndex = (roleIndex + 1) % roles.length;
+        }
+      }
+      setTimeout(typeLoop, deleting ? 45 : 75);
+    }
+    typeLoop();
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add('show');
+      });
+    }, { threshold: 0.16 });
+
+    document.querySelectorAll('.reveal').forEach((item) => observer.observe(item));
+  </script>
+</body>
+</html>
